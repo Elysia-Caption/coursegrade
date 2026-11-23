@@ -6,8 +6,20 @@
 
 #include "coursegrade.h"
 
-// 第二层的未知计算
+#include <print>
+#include <algorithm>
+
+#include "score.h"
+
+// 第二层的分解
 void computeSort(CourseGrade& cg)
 {
-    // todo
+    std::print("Processing all student grades... \n");
+    for(auto& g: cg){
+        g.total = score(g);  //假定能够进行score(g)操作
+    }
+    std::ranges::stable_sort(cg, [](auto& g1, auto& g2){
+        return g1.total <= g2.total;
+    });
+    std::print("Processing done!\n\n");
 }

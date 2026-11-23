@@ -17,6 +17,8 @@ target_sources(coursegrade
         read.cpp         read.h
         computesort.cpp  computesort.h
         print.cpp        print.h
+        score.cpp        score.h
+        readgrade.cpp    readgrade.h
         coursegrade.dat  coursegrade.h
     PRIVATE FILE_SET modules TYPE CXX_MODULES BASE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}
         FILES
