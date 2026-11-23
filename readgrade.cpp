@@ -8,21 +8,30 @@
 #include <print>
 using std::print;
 
-// 第三层分解，暂时不考虑错误处理
+#include <exception>
+using std::invalid_argument;
+
+// 第三层分解，添加错误检测
 std::istream& operator>>(std::istream& is, Grade& g)
 {
     print("  Reading a student grade... ");
     if (is) is >> g.name >> g.midterm >> g.final;
-    if (is){
-        for (double h;is >> h;)
+    if(!is.eof()&&is.fail())
+        throw invalid_argument("Incorrect name, midterm and final grade.");
+
+    if (is) {
+        for (double h; is >> h;)
             g.homework.push_back(h);
 
-        if(is.eof()) {
+        if(!is.eof() && is.fail())
+            throw invalid_argument("Incorrect homework grade.");
+
+        if(is.eof() && g.homework.size() != 0) {
             is.clear();
             print("Done!  {}\n", g.name);
         }
     }
-    if(!is) print("Error!\n");
+    if (!is) print("Error!\n");
     return is;
 }
 

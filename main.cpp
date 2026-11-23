@@ -6,17 +6,26 @@
 
 // CourseGrade calculation using a top-down, stepwise refinement approach
 
+#include <print>
+
 #include "read.h"
 #include "computesort.h"
 #include "print.h"
 
+
+// 第1次重构，添加错误处理
 int main()
 {
     CourseGrade courseGrade;
-
-    read(courseGrade);
-    computeSort(courseGrade);
-    print(courseGrade);
+    try {
+        read(courseGrade);
+        computeSort(courseGrade);
+        print(courseGrade);
+    } catch (const std::exception& e) {
+        std::print("error: {}\n", e.what());
+    } catch (...) {
+        std::print("Other error!\n");
+    }
 
     return 0;
 }
