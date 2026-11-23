@@ -20,7 +20,7 @@ target_sources(coursegrade
         score.cpp        score.h
         readgrade.cpp    readgrade.h
         coursegrade.dat  coursegrade.h
-        median.cpp       median.h
+        median.hpp
     PRIVATE FILE_SET modules TYPE CXX_MODULES BASE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}
         FILES
 )

@@ -5,7 +5,7 @@
 // SPDX-FileCopyrightText: 2026 FreeTech <open-src@qq.com>
 
 #include"score.h"
-#include "median.h"
+#include "median.hpp"
 
 // 第三层的分解
 double score(const Grade& g)
