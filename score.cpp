@@ -5,10 +5,10 @@
 // SPDX-FileCopyrightText: 2026 FreeTech <open-src@qq.com>
 
 #include"score.h"
+#include "median.h"
 
-// 第三层的未知计算
+// 第三层的分解
 double score(const Grade& g)
 {
-    //todo
-    return 0;
+    return 0.2 * g.midterm + 0.4 * g.final + 0.4 * median(g.homework);
 }

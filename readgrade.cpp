@@ -5,10 +5,24 @@
 // SPDX-FileCopyrightText: 2026 FreeTech <open-src@qq.com>
 
 #include "readgrade.h"
-using std::istream;
-// 第三层的未知计算
-istream& operator>>(istream& is, Grade& g)
+#include <print>
+using std::print;
+
+// 第三层分解，暂时不考虑错误处理
+std::istream& operator>>(std::istream& is, Grade& g)
 {
-    //todo
+    print("  Reading a student grade... ");
+    if (is) is >> g.name >> g.midterm >> g.final;
+    if (is){
+        for (double h;is >> h;)
+            g.homework.push_back(h);
+
+        if(is.eof()) {
+            is.clear();
+            print("Done!  {}\n", g.name);
+        }
+    }
+    if(!is) print("Error!\n");
     return is;
 }
+
