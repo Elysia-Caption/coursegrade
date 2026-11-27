@@ -19,6 +19,12 @@ void g()
     std::print("I am Captian!");
 }
 
+// 测试 2
+void f()
+{
+    std::print("AAA");
+}
+
 
 // 第1次重构，添加错误处理
 int main()
