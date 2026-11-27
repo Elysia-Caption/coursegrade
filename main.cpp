@@ -21,8 +21,12 @@ void g()
 
 // 测试 2
 void f()
+{ std::print("AAA"); }
+
+// 测试 3
+void h()
 {
-    std::print("AAA");
+    std::println("我是岑蕲轩");
 }
 
 
