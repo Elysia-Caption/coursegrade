@@ -12,6 +12,13 @@
 #include "computesort.h"
 #include "print.h"
 
+// 测试远程仓库
+void g()
+{
+    int i = 10;
+    std::print("I am Captian!");
+}
+
 
 // 第1次重构，添加错误处理
 int main()
